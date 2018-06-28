@@ -1,28 +1,225 @@
-# Building a Website with Node.js and Express.js
-This is the repository for my course Building a Website with Node.js and Express.js. The full course is available on [LinkedIn Learning](https://www.linkedin.com/learning/building-a-website-with-node-js-and-express-js?trk=insiders_6787408_learning) and [Lynda.com](https://www.lynda.com/Express-js-tutorials/Building-Website-Node-js-Express-js/502310-2.html)
+# node-js-getting-started
+<!-- A barebones Node.js app using [Express 4](http://expressjs.com/).
 
-[![Building a Website with Node.js and Express.js](https://media-exp2.licdn.com/media-proxy/ext?w=1200&h=675&f=n&hash=e1P0u0YoBCeiMKFIjsJVxCTwgbU%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6plxVUzgUv5K_PrkC9q0RIUJDPBy-kWyep-9WfZXfresbfZLSiol8TeCwAkgExfeuoQzTjFI69LcLmY4Yx3A)](https://www.linkedin.com/learning/building-a-website-with-node-js-and-express-js)
+This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 
-Interested in building JavaScript websites that do more? Node.js and Express.js are a perfect match. Express is a fast, minimalist framework that sits on top of Node.js and allows you to build powerful single- and multi-page web applications and websites.
+## Running Locally
 
-In this course, Ray Villalobos walks through the process of creating full-featured websites with these technologies. First, find out how to install each package and leverage Node.js features from within Express. Then learn how to build a basic application with templating engines like EJS; create more flexible, modular code with includes and conditional statements; build APIs to manage HTTP requests to add and delete content dynamically; and configure more complex routing. Along the way, Ray implements features like customer feedback forms and real-time live chat, so you can see exactly what Node.js and Express are capable of.
-## Instructions
-This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage. Or you can simply add `/tree/BRANCH_NAME` to the URL to go to the branch you want to peek at. 
+Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
 
-## Branches
-The branches are structured so that they correspond to the videos in the course. So, for example if I name a branch `02_03b` then that branch corresponds to the second chapter and the third video in that chapter. The extra letter at the end of the name corresponds to the state of the branch. A `b` means that this is how the code looks at the beginning of the video, an `e` means that is how the code looked at the end of the video.
+```sh
+$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
+$ cd node-js-getting-started
+$ npm install
+$ npm start
+```
 
-You may find additional branches that correspond to other states, so for example, you may see a `t`, which means this is a target branch. A target branch is something I use during development or updates of a course and it's for a branch that I'm working towards. For the purposes of taking a course, you may ignore any additional branches. The `master` branch usually has the state of the project as I'm working through it and the final state of the code when I finish the course. 
+Your app should now be running on [localhost:5000](http://localhost:5000/).
 
-## Installing
-1. Make sure you have these installed
-	- [node.js](http://nodejs.org/)
-	- [git](http://git-scm.com/)
-2. Clone this repository into your local machine using the terminal (mac) or Gitbash (PC) `> git clone CLONEURL`
-3. CD to the folder `cd FOLDERNAME`
-Run `> npm install -g nodemon` to install nodemod globally
-Run `> npm install` to install the project dependencies
-Run `> npm start` command to start the automation
+## Deploying to Heroku
 
-## More Stuff
-Check out some of my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/ray-villalobos?trk=insiders_6787408_learning) and [lynda.com](http://lynda.com/rayvillalobos). You can follow me on [LinkedIn](https://www.linkedin.com/in/planetoftheweb/), read [my blog](http://raybo.org), [follow me on twitter](http://twitter.com/planetoftheweb), or check out my [youtube channel](http://youtube.com/planetoftheweb).
+```
+$ heroku create
+$ git push heroku master
+$ heroku open
+```
+or
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy) -->
+
+
+## Start
+1. Opret en gratis [Heroku konto](https://signup.heroku.com/signup/dc)
+1. Installer [Node.js & npm](https://nodejs.org/en/download/)  lokalt
+1. Download [Heroku CLI](https://devcenter.heroku.com/toolbelt-downloads/windows64) (windows 64bit).
+
+
+##  Set up
+1. Åben kommandoprompt (cmd)
+1. Change direction til ønskede mappe
+```
+$ cd C:\Users\frede\Documents\RTS\Webserver\
+```
+3. Log ind på din Heroku konto i kommandoprompt
+``` 
+$ heroku login
+Enter your Heroku credentials.
+Email: 4027010@rts-365.dk
+Password:
+```
+
+### Tjek om alt er installeret korrekt.
+
+- Eksemplet virker kun med Node v8 eller højere.
+```
+$ node --version
+v8.9.4
+```
+- Se om npm er med, ellers installer den nyeste version.
+```
+$ npm --version
+5.6.0
+```
+- Se om git er installeret, ellers gerinstaller Heroku CLI og prøv igen.
+```
+$ git --version
+git version 2.8.1.windows.1
+```
+
+## Clone et repository
+1. Clone det ønskede repository
+1. Change direction til den nyoprettede mappe
+```
+$ git clone https://github.com/FrederikDahlin/heroku-server.git
+$ cd heroku-server
+```
+
+## Deploy
+
+1. Opret en app på Heroku som klargører Heroku til at modtage source koden.
+```
+$ heroku create
+Creating sharp-rain-871... done, stack is cedar-14
+http://sharp-rain-871.herokuapp.com/ | https://git.heroku.com/sharp-rain-871.git
+Git remote heroku added
+```
+2. "Deploy" koden
+```
+$ git push heroku master
+Counting objects: 488, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (367/367), done.
+Writing objects: 100% (488/488), 231.85 KiB | 115.92 MiB/s, done.
+Total 488 (delta 86), reused 488 (delta 86)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Node.js app detected
+remote:
+remote: -----> Creating runtime environment
+remote:
+remote:        NPM_CONFIG_LOGLEVEL=error
+remote:        NODE_VERBOSE=false
+remote:        NODE_ENV=production
+remote:        NODE_MODULES_CACHE=true
+remote:
+remote: -----> Installing binaries
+remote:        engines.node (package.json):  8.11.1
+remote:        engines.npm (package.json):   unspecified (use default)
+remote:
+remote:        Resolving node version 8.11.1...
+remote:        Downloading and installing node 8.11.1...
+remote:        Using default npm version: 5.6.0
+       ....
+remote: -----> Build succeeded!
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 19M
+remote: -----> Launching...
+remote:        Released v3
+remote:        http://sharp-rain-871.herokuapp.com deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/nameless-savannah-4829.git
+ * [new branch]      master -> master
+```
+
+3. Scale serveren en gang op så den kører
+```
+$ heroku ps:scale web=1
+```
+
+4. Åben webhotellet
+```
+$ heroku open
+```
+
+## Logs
+1. Brug logging kommandoen til at se info om den kørende app
+```
+$ heroku logs --tail
+2011-03-10T10:22:30-08:00 heroku[web.1]: State changed from created to starting
+2011-03-10T10:22:32-08:00 heroku[web.1]: Running process with command: `node index.js`
+2011-03-10T10:22:33-08:00 heroku[web.1]: Listening on 18320
+2011-03-10T10:22:34-08:00 heroku[web.1]: State changed from starting to up
+```
+## Definer en Procfile
+_Kan jeg ikke forklar_
+> The Procfile in the example app you deployed looks like this:
+```
+web: node index.js
+```
+
+> This declares a single process type, web, and the command needed to run it. The name web is important here. It declares that this process type will be attached to the HTTP routing stack of Heroku, and receive web traffic when deployed.
+
+> Procfiles can contain additional process types. For example, you might declare one for a background worker process that processes items off of a queue.
+
+## Scale appen
+-  Appen kører på én enkel web dyno
+>"Think of a dyno as a lightweight container that runs the command specified in the Procfile."
+
+- Tjek hvor mange dynos kører med _ps_ kommandoen:
+```
+$ heroku ps
+=== web (Free): `node index.js`
+web.1: up 2014/04/25 16:26:38 (~ 1s ago)
+```
+
+> "Scaling an application on Heroku is equivalent to changing the number of dynos that are running."
+
+
+### Test scale appen
+```
+$ heroku ps:scale web=0
+```
+- Scale op igen
+```
+$ heroku ps:scale web=1
+```
+
+
+
+
+## App lokalt
+- Kør appen lokalt
+```
+$ heroku local web
+[OKAY] Loaded ENV .env File as KEY=VALUE Format
+1:23:15 PM web.1 |  Node app is running on port 3000
+```
+
+- Åben http://localhost:3000, appen burde køre lokalt
+    - Ctrl + C for at stoppe serven
+
+
+## Push lokale ændringer
+Efter der er blevet lavet ændringer lokalt, push filerne.
+
+1. Tilføj de ændrede filer til det lokale git repository
+```
+$ git add .
+```
+1. Commit ændringerne
+```
+$ git commit -m "initial commit"
+```
+1. Push
+```
+$ git push heroku master
+```
+
+
+## Console
+- Start console
+```
+$ heroku run bash
+Running `bash` attached to terminal... up, run.3052
+~ $ ls
+Procfile  README.md  composer.json  composer.lock  vendor  views  web
+~ $ exit
+exit
+```
+
+
